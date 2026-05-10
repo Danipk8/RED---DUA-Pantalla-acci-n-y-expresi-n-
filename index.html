@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla 11 - DUA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+ <!-- 
+    <h1>Expresa tu aprendizaje</h1>
+    <p class="subtitle">Principio DUA: Acción y expresión</p>
+
+    <h2>Para ti, ¿qué es el DUA?</h2>
+    <p>Selecciona la forma en la que prefieres responder:</p>
+
+
+-->
+
+
+    <div class="options-container">
+
+        <!-- ESCRIBIR -->
+        <div class="option-card">
+
+            <button class="option-btn" onclick="mostrarSeccion('escribir')">
+                ✍️ ESCRIBIR
+            </button>
+
+            <div id="escribir" class="hidden response-section">
+
+                <textarea id="respuestaTexto"
+                    placeholder="Escribe aquí tu respuesta..."></textarea>
+
+                <button class="save-btn" onclick="guardarTexto()">
+                    Guardar respuesta
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- SELECCIONAR -->
+        <div class="option-card">
+
+            <button class="option-btn" onclick="mostrarSeccion('seleccionar')">
+                ✅ SELECCIONAR
+            </button>
+
+            <div id="seleccionar" class="hidden response-section">
+
+                <label class="selection-box">
+                    <input type="checkbox" value="El DUA adapta el aprendizaje">
+                    <span>El DUA adapta el aprendizaje</span>
+                </label>
+
+                <label class="selection-box">
+                    <input type="checkbox" value="Permite diferentes formas de aprender">
+                    <span>Permite diferentes formas de aprender</span>
+                </label>
+
+                <label class="selection-box">
+                    <input type="checkbox" value="Promueve inclusión educativa">
+                    <span>Promueve inclusión educativa</span>
+                </label>
+
+                <label class="selection-box">
+                    <input type="checkbox" value="Hace la enseñanza más flexible">
+                    <span>Hace la enseñanza más flexible</span>
+                </label>
+
+                <button class="save-btn" onclick="guardarSeleccion()">
+                    Guardar selección
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- AUDIO -->
+        <div class="option-card">
+
+            <button class="option-btn" onclick="mostrarSeccion('audio')">
+                🎤 GRABAR AUDIO
+            </button>
+
+            <div id="audio" class="hidden response-section">
+
+                <button class="audio-btn" id="startBtn">
+                    Iniciar
+                </button>
+
+                <button class="audio-btn stop" id="stopBtn" disabled>
+                    Detener
+                </button>
+
+                <button class="audio-btn repeat" id="repeatBtn">
+                    Repetir
+                </button>
+
+                <audio id="audioPlayback" controls></audio>
+
+            </div>
+        </div>
+
+    </div>
+
+
+<p>Nota: Recuerda subir el archivo descargado</p>
+
+
+    <div class="final-buttons">
+        <button onclick="subirFormulario()">
+            📤 Subir evidencia
+        </button>
+    </div>
+
+</div>
+
+
+<div id="formularioEmbed" class="hidden form-container">
+
+  
+
+    <iframe
+        src="https://tally.so/r/A7Abv0"
+        width="100%"
+        height="650"
+        frameborder="0">
+    </iframe>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
