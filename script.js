@@ -143,9 +143,18 @@ function subirFormulario() {
     const formulario =
         document.getElementById("formularioEmbed");
 
+    // Mostrar / ocultar
     formulario.classList.toggle("hidden");
-}
 
+    // Si quedó visible
+    if (!formulario.classList.contains("hidden")) {
+
+        formulario.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+}
 
 //AUDIO:
 

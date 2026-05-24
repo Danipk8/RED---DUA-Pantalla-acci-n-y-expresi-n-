@@ -186,11 +186,6 @@ textarea {
 
 
 
-.final-buttons button:first-child {
-    background: #ff9f1a;
-    background: #3742fa;
-}
-
 
 
 
@@ -204,13 +199,19 @@ margin-top: 30px;
     text-shadow: 0 0 15px #00e5ff;
 }
 
-
 .final-buttons {
-    margin-top: 10px;
-scale: 120%;
+margin-top: -21px;
+  scale: 112%;
+  padding: 23px;
 }
 
 
+
+
+.final-buttons button:first-child {
+    background: #ff9f1a;
+    background: #3742fa;
+}
 
 
 
@@ -218,7 +219,7 @@ scale: 120%;
 
     margin-top: -70px;
     padding: 20px;
-    padding-top: 5px;
+    padding-top: 6px;
     border: 2px solid #00e5ff;
     border-radius: 20px;
     background: rgba(255,255,255,0.03);
