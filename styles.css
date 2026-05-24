@@ -230,3 +230,31 @@ scale: 75%;
 }
 
   
+.recording {
+
+    color: #ff4d4d;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.08);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -161,15 +161,19 @@ function subirFormulario() {
 //Configuración de botones
 //Pide acceso al micrófono.
 const startBtn = document.getElementById("startBtn");
+const recordingIndicator =
+    document.getElementById("recordingIndicator");
+
 //Empieza a grabar.
 const stopBtn = document.getElementById("stopBtn");
 const repeatBtn = document.getElementById("repeatBtn");
+
+
 const audioPlayback = document.getElementById("audioPlayback");
 
 
-//Función iniciar grabación
 
-startBtn.addEventListener("click", async () => {
+async function iniciarGrabacion() {
 
     tipoRespuesta = "audio";
 
@@ -187,10 +191,23 @@ startBtn.addEventListener("click", async () => {
     startBtn.disabled = true;
     stopBtn.disabled = false;
 
+    recordingIndicator.classList.remove("hidden");
+
     mediaRecorder.addEventListener("dataavailable", event => {
         audioChunks.push(event.data);
     });
+}
+
+
+
+//Función iniciar grabación
+
+startBtn.addEventListener("click", async () => {
+
+    iniciarGrabacion();
+
 });
+
 
 
 //Función detener grabación
@@ -217,18 +234,25 @@ stopBtn.addEventListener("click", () => {
 
         alert("Audio descargado");
     });
+//aviso de que no esta grabando
+    recordingIndicator.classList.add("hidden");
 });
 
 // REPETIR audio
-repeatBtn.addEventListener("click", () => {
+repeatBtn.addEventListener("click", async () => {
 
     audioChunks = [];
+
     audioPlayback.src = "";
+
     respuestaGuardada = "";
 
-    alert("Puedes grabar nuevamente");
-});
+    startBtn.disabled = true;
+    stopBtn.disabled = false;
 
+    await iniciarGrabacion();
+
+});
 
 
 //Funcion descargar audio
